@@ -1,0 +1,134 @@
+:root {
+    --input-background: teal;
+    --color:white;
+}
+
+*{
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body{
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color:#252A34;
+}
+
+h1{
+    color: var(--color);
+    font-size: 40px;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:14px;
+}
+
+.info-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    gap:20px;
+}
+
+.info-container > input,
+.info-container > button {
+    background-color: var(--input-background);
+    border: solid;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+.info-container > input:hover,
+.info-container > button:hover {
+    background-color: rgb(30, 185, 185);
+    transform: scale(1.04);
+    transition: 0.5s ease-in;
+}
+
+.game-container {
+    display: grid;
+    height: 440px;
+    grid-template-columns: repeat(3,minmax(140px,1fr));
+    grid-template-columns: repeat(3,minmax(140px,1fr));
+}
+
+.square {
+    border: solid 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 140px;
+    font-size: 3rem;
+    background-color: var(--input-background);
+}
+
+.square:hover{
+    transition: 0.5s;
+    background-color: rgb(39, 206, 206);
+    cursor: pointer;
+}
+
+.turn {
+    display: flex;
+    flex-wrap: 1;
+}
+
+.turn > p {
+    border: solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    width: 100px;
+    min-height: 60px;
+    transition: 0.5s;
+}
+
+.turn > p:nth-child(1) {
+    background-color: rgb(179, 4, 91);
+}
+
+.turn > p:nth-child(2) {
+    background-color: rgba(66, 175, 175, 0.548);
+}
+
+.message {
+    color: var(--color);
+}
+
+@media all and (max-width: 1000px){
+
+ .container{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .game-container {
+        height: 300px;
+        grid-template-columns: repeat(3,minmax(100px,1fr));
+        grid-template-columns: repeat(3,minmax(100px,1fr));
+    }
+
+    .square {
+        display: flex;
+        font-size: 2rem;
+        min-height: 100px
+    }
+
+    .info-container{
+        width: 240px;
+        margin-top: 14px;
+    }
+
+    .info-container > input,
+    .info-container > button {
+        width: 200px;
+    }
+}
